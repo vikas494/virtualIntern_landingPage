@@ -6,35 +6,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: white;
+    background-color: #111216; /* Dark background matching the image */
+    color: #ffffff;
     overflow-x: hidden;
-}
-
-/* Background Shapes */
-.bg-shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: -1;
-}
-
-.shape1 {
-    width: 400px;
-    height: 400px;
-    background: #2563eb;
-    top: -100px;
-    left: -100px;
-}
-
-.shape2 {
-    width: 400px;
-    height: 400px;
-    background: #7c3aed;
-    bottom: -150px;
-    right: -150px;
 }
 
 /* NAV */
@@ -42,71 +18,126 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
+    padding: 25px 5%;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     gap: 30px;
+    align-items: center;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #facc15;
+    color: #ccff00;
 }
 
-/* HEADER */
+.nav-contact {
+    color: #ccff00;
+}
+
+/* HEADER / HERO SECTION */
 header {
-    padding: 100px 8%;
+    padding: 60px 5% 100px;
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 60px;
+}
+
+.header-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.highlight-text {
+    color: #ccff00; /* Neon green matching the image */
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .header-text h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
 }
 
 .header-text p {
-    opacity: 0.9;
-    margin-bottom: 25px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+/* THE FLUID IMAGE CONTAINER */
+.header-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header-image img {
-    width: 350px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    transition: 0.4s;
+    width: 100%; /* Makes image fluid */
+    max-width: 800px; /* Limits how massive it gets on ultra-wide screens */
+    height: auto; /* Collapses height proportionally */
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-.header-image img:hover {
-    transform: scale(1.05);
+/* BUTTONS */
+button {
+    padding: 15px 35px;
+    background: #ccff00; /* Neon green button */
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.3s ease;
 }
 
-/* GLASS SECTIONS */
+button:hover {
+    background: #b3e600;
+    transform: translateY(-2px);
+}
+
+/* SECTIONS (About, Details, Contact) */
 section {
-    padding: 80px 8%;
-    background: rgba(255, 255, 255, 0.08);
-    margin: 40px 8%;
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* HEADINGS */
 section h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    font-size: 2rem;
+}
+
+section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
 }
 
 /* LISTS */
@@ -114,72 +145,122 @@ ul {
     list-style: none;
 }
 
-li {
+#features li, #benefits li {
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.1rem;
 }
 
-/* BUTTON */
-button {
-    padding: 12px 28px;
-    background: #facc15;
-    border: none;
-    border-radius: 8px;
+/* READ MORE */
+.details-section {
+    padding-top: 20px;
+}
+
+.read-more summary {
+    background: transparent;
+    color: #ccff00;
+    border: 1px solid #ccff00;
+    padding: 12px 25px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    width: fit-content;
+    margin-bottom: 30px;
     transition: 0.3s;
 }
 
-button:hover {
-    background: #eab308;
-    transform: translateY(-3px);
-}
-
-/* CTA */
-#cta {
-    text-align: center;
+.read-more summary:hover {
+    background: rgba(204, 255, 0, 0.1);
 }
 
 /* FORM */
+form {
+    margin-top: 20px;
+}
+
 form input,
 form textarea {
     width: 100%;
     max-width: 500px;
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    border: none;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    display: block;
 }
 
-/* FOOTER */
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #ccff00;
+}
+
+/* FOOTER & SOCIAL LINKS */
 footer {
     text-align: center;
-    padding: 30px;
-    opacity: 0.8;
+    padding: 50px 5% 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 50px;
 }
 
-/* READ MORE */
-.read-more summary {
-    background: #2563eb;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: fit-content;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
     margin-bottom: 20px;
 }
 
-.read-more summary::-webkit-details-marker {
-    display: none;
+.social-links a {
+    color: white;
+    width: 24px;
+    height: 24px;
+    transition: color 0.3s;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+.social-links a:hover {
+    color: #ccff00;
+}
+
+footer p {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* MOBILE RESPONSIVE (Media Queries) */
+@media (max-width: 992px) {
     .header-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left; /* Keep left aligned or change to center based on preference */
+        gap: 40px;
     }
 
-    .header-image img {
-        width: 250px;
+    .header-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .header-text {
+        max-width: 100%;
+    }
+
+    .header-image {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-text h1 {
+        font-size: 2.8rem;
     }
 }
