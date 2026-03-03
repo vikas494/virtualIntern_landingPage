@@ -151,6 +151,11 @@ ul {
     font-size: 1.1rem;
 }
 
+/*contact*/
+#contact a{
+    color: #b3e600;
+}
+
 /* READ MORE */
 .details-section {
     padding-top: 20px;
